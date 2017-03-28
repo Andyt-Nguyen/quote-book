@@ -1,0 +1,61 @@
+body {
+	background: url('../circles-and-roundabouts/circles-and-roundabouts.png.png')
+}
+header {
+	text-align: center;
+	font-size: 40px;
+}
+.form-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.form-form input{
+	width: 50%;
+	height: 40px;
+	font-size: 40px;
+}
+
+ul li{
+	text-decoration: none;
+	list-style: none;
+}
+
+.quote-section {
+	text-align: center;
+}
+
+.remove {
+	border:1px solid grey;
+	border-radius: 20px;
+	padding: 5px;
+	background: #fff;
+	width: 18px;
+}
+
+.remove:hover {
+	border: 2px solid grey;
+	border-radius: 20px;
+	padding: 5px;
+	color: red;
+	cursor: pointer;
+}
+
+#quotes li.ng-leave {
+	transform: translateX(0);
+	opacity: 1;
+	transition-delay: 4s;
+}
+
+#quotes li.ng-leave.ng-leave-active {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+.submitter{
+	background: pink;
+	color:red;
+	font-size: 98px;
+}

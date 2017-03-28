@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="css/index.css">
+	<script src="jsStuff/lib/angular-animate.min.js" charset="utf-8"></script>
 	<script src="jsStuff/lib/angular.min.js" charset="utf-8"></script>
 	<script src="jsStuff/app.js" charset="utf-8"></script>
 	<script src="jsStuff/controllers/quotecontroller.js" charset="utf-8"></script>
@@ -12,6 +13,34 @@
 	<title>Quote Book</title>
 </head>
 <body ng-controller="QuoteController">
-	
+	<header>
+		<h1>Quote for days!</h1>
+	</header>
+	<section class="quote-section">
+		<!-- <ul>
+			<li><h2>{{quoter.quoteText}}</h2></li>
+			<li><h3>{{quoter.quoteAuthor}}</h3></li>
+
+			<li><h2>{{quoter2.quoteText}}</h2></li>
+			<li><h3>{{quoter2.quoteAuthor}}</h3></li>
+
+			<li><h2>{{quoter3.quoteText}}</h2></li>
+			<li><h3>{{quoter3.quoteAuthor}}</h3></li>
+		</ul> -->
+		<ul id='quotes'>
+			<li ng-repeat="quotes in newQuoters">
+				<h5>{{quotes.text}}</h5>
+				<h6>{{quotes.author}}</h6>
+				<span ng-click="remove(quotes)" class="remove">X</span>
+			</li>
+		</ul>
+	</section>
+	<div>
+		<form class="form-form" ng-submit="addQuote()">
+			<input type="text" placeholder="Quotes" ng-model="newQuote.text">
+			<input type="text" placeholder="Author of quote" ng-model="newQuote.author">
+			<button type="submit" class="submitter">Submit</button>
+		</form>
+	</div>
 </body>
 </html>

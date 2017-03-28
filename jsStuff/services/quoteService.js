@@ -1,10 +1,30 @@
 angular.module('myQuoteApp')
 .service('QuoteService', ['$http', function($http){
-	$http.get('http://api.forismatic.com/api/1.0/').then(function(response){
-		this.quote = response.data;
-	});
 
-	
+	this.quoters = function(){
+		return $http.get("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonhttp://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json").then(
+			function(response){
+				return response.data
+		});
+	}
+
+	this.quoters2 = function(){
+		return $http.get("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonhttp://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json").then(
+			function(response){
+				return response.data
+		});
+	}
+
+	this.quoters3 = function(){
+		return $http.get("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonhttp://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json").then(
+			function(response){
+				return response.data
+		});
+	}
+
+
+
+
 	this.quotes = [
 		 { text: 'Life isn\'t about getting and having, it\'s about giving and being.', author: 'Kevin Kruse'},
 		 { text: 'Whatever the mind of man can conceive and believe, it can achieve', author: 'Napoleon Hill'},
